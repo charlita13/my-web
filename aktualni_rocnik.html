@@ -9,7 +9,7 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="brand">
+      <a href="index.html" class="brand" aria-label="Přejít na úvodní stránku">
         <img src="img/logo_vez.png" alt="Logo Šachový oddíl">
         <div>
           <h1>Šachový klub</h1>
@@ -18,7 +18,6 @@
       </a>
 
       <nav class="nav" aria-label="Hlavní navigace">
-
         <a href="index.html">Úvod</a>
         <a href="aktualni_rocnik.html">Aktuální ročník</a>
         <a href="minule_rocniky.html">Minulé ročníky</a>
@@ -30,61 +29,78 @@
     </div>
   </header>
 
-    <main class="container">
-      <section class="page-with-logo">
-        
-        <div class="page-logo">
-          <img src="img/logo_vez.png" alt="Logo Šachový klub Dolní Bojanovice">
+  <main class="container">
+    <!-- logo vlevo, obsah vpravo -->
+    <section class="page-with-logo">
+      <div class="page-logo">
+        <img src="img/logo_vez.png" alt="Logo Šachový klub Dolní Bojanovice">
+      </div>
+
+      <div class="page-content">
+        <h1>Ročník 2025 / 2026</h1>
+
+        <div class="link-row">
+          <span>Přehled sezóny 2025/2026 na www.chess.cz</span>
+          <a href="https://www.chess.cz/soutez/3340/" target="_blank" rel="noopener">Okresní přebor I. 2025_26 - Hodonín</a>
         </div>
 
-        <div class="page-content">
-          <h1>Ročník 2025 / 2026</h1>
+        <table class="table" style="margin-top:12px;">
+          <thead>
+            <tr>
+              <th>Datum</th>
+              <th>Domácí / Hosté</th>
+              <th>Výsledek</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>19.10.2025</td>
+              <td>Ježov - Dolní Bojanovice</td>
+              <td>5,5 : 1,5</td>
+            </tr>
+            <tr>
+              <td>09.11.2025</td>
+              <td>Veselí nad Moravou 'C' - Dolní Bojanovice</td>
+              <td>4,5 : 2,5</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-          <div class="link-row">
-            <span>Přehled sezóny 2025/2026 na www.chess.cz</span>
-            <a href="https://www.chess.cz/soutez/3340/" target="_blank">Okresní přebor I. 2025_26 - Hodonín</a>
-          </div>
-
-          <table class="table" style="margin-top:12px;">
-            <thead>
-              <tr><th>Datum</th><th>Domácí / Hosté</th><th>Výsledek</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>19.10.2025</td><td>Ježov - Dolní Bojanovice</td><td>5,5 : 1,5</td></tr>
-              <tr><td>09.11.2025</td><td>Veselí nad Moravou 'C' - Dolní Bojanovice</td><td>4,5 : 2,5</td></tr>
-            </tbody>
-          </table>
-
-        </div>
-
-      </section>
-
-      <section class="card latest-post" style="margin-top:18px;">
-        <div class="post-meta">
-          <time datetime="2025-11-18" class="post-date">18. 11. 2025</time>
-        </div>
-
+    <!-- nejnovější článek (výpis) -->
+    <article class="card latest-post" style="margin-top:18px;">
+      <header class="post-meta">
+        <time datetime="2025-11-18" class="post-date">18. 11. 2025</time>
         <h2 class="post-title">Výjezd do Veselí nad Moravou</h2>
+      </header>
 
-        <p class="post-excerpt">
-          V neděli 9.listopadu nás čekla druhý zápas této sezény. Soupeřem bylo tentokrát Veselské 'céčko'. V zápase jsme se díky Jarku Řezáčovi a Jožkovi Vraňanovi ujali rychle vedení 2-0, ale průběh na dalších šachovnicích už tak optimistický nebyl. Postupně se projevila výrazná ELO převaha na zbývajících deskách a soupeř otočil průběžné skóre na 3-2. Po následné remíze Peti Hunči musel hrát kapitán Jenda Budovič na výhru a zkusit tak zachránit celkovou remízu. Riskantní hra bohužel ovoce nepřinesla a tak jsme odjeli s prohrou 2,5 - 4,5.
+      <div class="post-excerpt">
+        <p>
+          9.11. nás čekal druhý zápas této sezény. Soupeřem bylo tentokrát Veselské 'céčko'.
+          V zápase jsme se díky Jarku Řezáčovi a Jožkovi Vraňanovi ujali rychle vedení 2-0, 
+          ale průběh na dalších šachovnicích už tak optimistický nebyl. Postupně se projevila výrazná ELO 
+          převaha na prvních většině desek a soupeř otočil na 3-2. Po následné remíze Peti Hunči musel hrát kapitán Jenda Budovič na výhru. 
+          Riskantní hra bohužel ovoce nepřinesla a tak jsme odjeli s prohrou 2,5 - 4,5.
         </p>
+      </div>
 
-        <p style="margin-top:18px;">
-          <a href="clanky/zapas-9-11-2025.html" class="btn">Číst více</a>
-        </p>
-      </section>
+      <p style="margin-top:18px;">
+        <a href="clanky/zapas-9-11-2025.html" class="btn">Číst více</a>
+      </p>
+    </article>
 
-      <!-- PRAVÝ OBSAH -->
-      <section class="card">
 
-        <div class="season-photo">
-          <img src="img/25-26.png" alt="Sezóna 2025/2026">
-        </div>
+    <!-- pravý blok s obrázkem sezóny -->
+    <aside class="card" style="margin-top:18px;">
+      <div class="season-photo">
+        <img src="img/25-26.png" alt="Sezóna 2025/2026">
+      </div>
+    </aside>
+  </main>
 
-      </section>
-    </main>
-
-  <footer class="site-footer"><div class="container">© ŠK Dolní Bojanovice & Ch13</div></footer>
+  <footer class="site-footer">
+    <div class="container">© ŠK Dolní Bojanovice & Ch13</div>
+  </footer>
 </body>
 </html>

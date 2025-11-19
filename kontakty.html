@@ -1,16 +1,18 @@
 <!doctype html>
 <html lang="cs">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Kontakty</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kontakty — ŠK Dolní Bojanovice</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="brand">
-        <img src="img/logo_vez.png" alt="Logo Šachový oddíl">
+      <!-- brand jako odkaz na úvod -->
+      <a href="index.html" class="brand" aria-label="Přejít na úvodní stránku">
+        <img src="img/logo_vez.png" alt="Logo Šachový klub Dolní Bojanovice" />
         <div>
           <h1>Šachový klub</h1>
           <h2>Dolní Bojanovice</h2>
@@ -18,56 +20,71 @@
       </a>
 
       <nav class="nav" aria-label="Hlavní navigace">
-
         <a href="index.html">Úvod</a>
         <a href="aktualni_rocnik.html">Aktuální ročník</a>
         <a href="minule_rocniky.html">Minulé ročníky</a>
         <a href="stepansky_turnaj.html">Štěpánský turnaj</a>
         <a href="o_klubu.html">O klubu</a>
         <a href="odkazy.html">Odkazy</a>
-        <a href="kontakty.html">Kontakty</a>
-
+        <a href="kontakty.html" aria-current="page">Kontakty</a>
       </nav>
     </div>
   </header>
 
   <main class="container">
+    <section class="page-with-logo" aria-labelledby="contacts-heading">
 
-    <section class="page-with-logo">
-        
-        <div class="page-logo">
-          <img src="img/logo_vez.png" alt="Logo Šachový klub Dolní Bojanovice">
-        </div>
-    
-    <section class="card">
-      <h2>Kontakty</h2>
+      <div class="page-logo" aria-hidden="true">
+        <img src="img/logo_vez.png" alt="Logo ŠK Dolní Bojanovice" />
+      </div>
 
-        <div class="link-row">
-          <span>šachový klub</span>
-          <a href="mailto:janbudovic@centrum.cz?subject=%C5%A0achov%C3%BD%20klub%20Doln%C3%AD%20Bojanovice">
-            janbudovic@centrum.cz
-          </a>
-        </div>
+      <div class="page-content">
+        <section class="card">
+          <h2 id="contacts-heading">Kontakty</h2>
 
-        <div class="link-row">
-          <span>webové stránky</span>
-          <a href="mailto:kratky.k@email.cz?subject=Web%20%C5%A0K%20Doln%C3%AD%20Bojanovice">
-            kratky.k@email.cz
-          </a>
-        </div>
+          <div class="links-list" role="list">
+            <div class="link-row" role="listitem">
+              <span>šachový klub</span>
+              <a href="mailto:janbudovic@centrum.cz?subject=%C5%A0achov%C3%BD%20klub%20Doln%C3%AD%20Bojanovice"
+                 title="Napište na janbudovic@centrum.cz">
+                janbudovic@centrum.cz
+              </a>
+            </div>
 
-        <div class="link-row"><span>hrací místnost</span><a href="https://www.google.com/maps/place/Horn%C3%AD+Hospoda/@48.8598705,17.0263565,17z/data=!4m6!3m5!1s0x47132916b4a26f73:0x289717dfde8baed7!8m2!3d48.8592594!4d17.0282158!16s%2Fg%2F11f3n3rt75!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MTExMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">Horní hospoda, Hlavní 386, Dolní Bojanovice</a></div>        
+            <div class="link-row" role="listitem">
+              <span>webové stránky</span>
+              <a href="mailto:kratky.k@email.cz?subject=Web%20%C5%A0K%20Doln%C3%AD%20Bojanovice"
+                 title="Napište na kratky.k@email.cz">
+                kratky.k@email.cz
+              </a>
+            </div>
 
-        <div class="map-preview">
-          <a href="https://www.google.com/maps/search/?api=1&query=Horn%C3%AD+Hospoda%2C+Hlavn%C3%AD+386%2C+Doln%C3%AD+Bojanovice"
-            target="_blank" rel="noopener">
-            <img src="img/mapa_horni_hospoda.png" alt="Mapa – Horní Hospoda, Dolní Bojanovice">
-          </a>
-        </div>
+            <div class="link-row" role="listitem">
+              <span>hrací místnost</span>
+              <a href="https://www.google.com/maps/search/?api=1&query=Horn%C3%AD+Hospoda%2C+Hlavn%C3%AD+386%2C+Doln%C3%AD+Bojanovice"
+                 target="_blank" rel="noopener" title="Otevřít Horní hospodu v Google Maps">
+                Horní hospoda, Hlavní 386, Dolní Bojanovice
+              </a>
+            </div>
+          </div>
+
+          <div class="map-preview" aria-hidden="false" style="margin-top:18px;">
+            <a href="https://www.google.com/maps/search/?api=1&query=Horn%C3%AD+Hospoda%2C+Hlavn%C3%AD+386%2C+Doln%C3%AD+Bojanovice"
+               target="_blank" rel="noopener" title="Otevřít mapu Horní hospody v Google Maps">
+              <img src="img/mapa_horni_hospoda.png"
+                   alt="Mapa — Horní hospoda, Hlavní 386, Dolní Bojanovice"
+                   style="max-width:100%; border-radius:8px; display:block;" />
+            </a>
+          </div>
+
+        </section>
+      </div>
 
     </section>
   </main>
 
-  <footer class="site-footer"><div class="container">© ŠK Dolní Bojanovice & Ch13</div></footer>
+  <footer class="site-footer">
+    <div class="container">© ŠK Dolní Bojanovice &amp; Ch13</div>
+  </footer>
 </body>
 </html>

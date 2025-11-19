@@ -8,87 +8,93 @@
 </head>
 <body>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="brand">
-      <img src="../img/logo_vez.png" alt="Logo Šachový oddíl">
-      <div>
-        <h1>Šachový klub</h1>
-        <h2>Dolní Bojanovice</h2>
-      </div>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <!-- brand jako jeden odkaz (klik = úvod) -->
+      <a href="../index.html" class="brand" aria-label="Přejít na úvodní stránku">
+        <img src="../img/logo_vez.png" alt="Logo Šachový oddíl Dolní Bojanovice">
+        <div>
+          <h1>Šachový klub</h1>
+          <h2>Dolní Bojanovice</h2>
+        </div>
+      </a>
+
+      <!-- hlavní navigace -->
+      <nav class="nav" aria-label="Hlavní navigace">
+        <a href="../index.html">Úvod</a>
+        <a href="../aktualni_rocnik.html">Aktuální ročník</a>
+        <a href="../minule_rocniky.html">Minulé ročníky</a>
+        <a href="../stepansky_turnaj.html">Štěpánský turnaj</a>
+        <a href="../o_klubu.html">O klubu</a>
+        <a href="../odkazy.html">Odkazy</a>
+        <a href="../kontakty.html">Kontakty</a>
+      </nav>
+
     </div>
+  </header>
 
-    <nav class="nav" aria-label="Hlavní navigace">
-      <a href="../index.html">Úvod</a>
-      <a href="../aktualni_rocnik.html">Aktuální ročník</a>
-      <a href="../minule_rocniky.html">Minulé ročníky</a>
-      <a href="../stepansky_turnaj.html">Štěpánský turnaj</a>
-      <a href="../o_klubu.html">O klubu</a>
-      <a href="../odkazy.html">Odkazy</a>
-      <a href="../kontakty.html">Kontakty</a>
-    </nav>
-  </div>
-</header>
+  <!-- MAIN -->
+  <main class="container">
 
+    <section class="page-with-logo">
 
-<main class="container">
+      <!-- LEVÝ SLOUPEC: seznam sezón -->
+      <!-- přidal jsem skrytý nadpis, na který aside odkazuje -->
+      <aside class="season-sidebar" aria-labelledby="season-list-title">
+        <h2 id="season-list-title" class="visually-hidden">Seznam sezón</h2>
+        <nav class="season-list" aria-label="Seznam sezon">
+          <a href="../archive/2024-2025.html">2024/2025</a>
+          <a href="../archive/2023-2024.html">2023/2024</a>
+          <a href="../archive/2022-2023.html">2022/2023</a>
+          <a href="../archive/2021-2022.html">2021/2022</a>
+          <a href="../archive/2020-2021.html">2020/2021</a>
+          <a href="../archive/2019-2020.html">2019/2020</a>
+          <a href="../archive/2018-2019.html">2018/2019</a>
+          <a href="../archive/2017-2018.html">2017/2018</a>
+          <a href="../archive/2016-2017.html">2016/2017</a>
+          <a href="../archive/2015-2016.html">2015/2016</a>
+          <a href="../archive/2014-2015.html">2014/2015</a>
+          <a href="../archive/2013-2014.html">2013/2014</a>
+          <a href="../archive/2012-2013.html">2012/2013</a>
+          <a href="../archive/2011-2012.html">2011/2012</a>
+          <a href="../archive/2010-2011.html">2010/2011</a>
+          <a href="../archive/2009-2010.html">2009/2010</a>
+          <a href="../archive/2008-2009.html">2008/2009</a>
+          <a href="../archive/2007-2008.html">2007/2008</a>
+          <a href="../archive/2006-2007.html">2006/2007</a>
+          <a href="../archive/2005-2006.html">2005/2006</a>
+          <a href="../archive/2004-2005.html">2004/2005</a>
+        </nav>
+      </aside>
 
-  <section class="page-with-logo">
+      <!-- PRAVÝ OBSAH -->
+      <section class="card" aria-labelledby="season-heading">
+        <h2 id="season-heading">Přehled sezóny 2023/2024</h2>
 
-    <!-- LEVÝ SLOUPEC – SEZNAM SEZÓN -->
+        <div class="link-row" role="group" aria-label="Externí odkaz na přehled soutěže">
+          <span>Přehled sezóny 2023/2024 na www.chess.cz</span>
+          <a href="https://www.chess.cz/soutez/3071/" target="_blank" rel="noopener noreferrer">
+            Okresní přebor I. 2023_24 - Hodonín
+          </a>
+        </div>
 
-    <div class="season-sidebar">
+        <div class="season-photo" style="margin-top:18px;">
+        <div class="table-section-title">Základní část</div>
+          <img src="../img/23-24.png" alt="Tabulka sezóny 2023/2024 — Okresní přebor I. Hodonín">
+        </div>
 
-      <div class="season-list">
-
-        <a href="2024-2025.html">2024/2025</a>
-        <a href="2023-2024.html">2023/2024</a>
-        <a href="2022-2023.html">2022/2023</a>
-        <a href="2021-2022.html">2021/2022</a>
-        <a href="2020-2021.html">2020/2021</a>
-        <a href="2019-2020.html">2019/2020</a>
-        <a href="2018-2019.html">2018/2019</a>
-        <a href="2017-2018.html">2017/2018</a>
-        <a href="2016-2017.html">2016/2017</a>
-        <a href="2015-2016.html">2015/2016</a>
-        <a href="2014-2015.html">2014/2015</a>
-        <a href="2013-2014.html">2013/2014</a>
-        <a href="2012-2013.html">2012/2013</a>
-        <a href="2011-2012.html">2011/2012</a>
-        <a href="2010-2011.html">2010/2011</a>
-        <a href="2009-2010.html">2009/2010</a>
-        <a href="2008-2009.html">2008/2009</a>
-        <a href="2007-2008.html">2007/2008</a>
-        <a href="2006-2007.html">2006/2007</a>
-        <a href="2005-2006.html">2005/2006</a>
-        <a href="2004-2005.html">2004/2005</a>
-
-      </div>
-      
-    </div>
-
-    <!-- PRAVÝ OBSAH -->
-    <section class="card">
-      <h2>Ročník 2023/2024</h2>
-
-      <div class="link-row">
-        <span>Přehled sezóny 2023/2024 na www.chess.cz</span>
-        <a href="https://www.chess.cz/soutez/3071/" target="_blank">Okresní přebor I. 2023_24 - Hodonín</a>
-      </div>
-
-      <div class="season-photo">
-        <img src="../img/22-23.png" alt="Sezóna 2023/2024">
-      </div>
+      </section>  
 
     </section>
 
-  </section>
+  </main>
 
-</main>
-
-<footer class="site-footer">
-  <div class="container">© ŠK Dolní Bojanovice & Ch13</div>
-</footer>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">© ŠK Dolní Bojanovice &amp; Ch13</div>
+  </footer>
 
 </body>
 </html>

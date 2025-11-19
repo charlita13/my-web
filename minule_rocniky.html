@@ -1,16 +1,18 @@
 <!doctype html>
 <html lang="cs">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Historie soutěží</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Minulé ročníky — ŠK Dolní Bojanovice</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="brand">
-        <img src="img/logo_vez.png" alt="Logo Šachový oddíl">
+      <!-- brand jako odkaz na úvod -->
+      <a href="index.html" class="brand" aria-label="Přejít na úvodní stránku">
+        <img src="img/logo_vez.png" alt="Logo Šachový klub Dolní Bojanovice" />
         <div>
           <h1>Šachový klub</h1>
           <h2>Dolní Bojanovice</h2>
@@ -18,55 +20,60 @@
       </a>
 
       <nav class="nav" aria-label="Hlavní navigace">
-
         <a href="index.html">Úvod</a>
         <a href="aktualni_rocnik.html">Aktuální ročník</a>
-        <a href="minule_rocniky.html">Minulé ročníky</a>
+        <a href="minule_rocniky.html" aria-current="page">Minulé ročníky</a>
         <a href="stepansky_turnaj.html">Štěpánský turnaj</a>
         <a href="o_klubu.html">O klubu</a>
         <a href="odkazy.html">Odkazy</a>
         <a href="kontakty.html">Kontakty</a>
-
       </nav>
     </div>
   </header>
 
   <main class="container">
+    <section class="page-with-logo" aria-labelledby="past-seasons-heading">
 
-    <section class="page-with-logo">
-        
-        <div class="page-logo">
-          <img src="img/logo_vez.png" alt="Logo Šachový klub Dolní Bojanovice">
-        </div>
+      <div class="page-logo" aria-hidden="true">
+        <img src="img/logo_vez.png" alt="Logo ŠK Dolní Bojanovice" />
+      </div>
 
-    <section class="card">
-      <h2>Minulé ročníky</h2>
-      <ul style="margin-top:12px;">
-        <li><a href="archive/2024-2025.html">2024/2025</a></li>
-        <li><a href="archive/2023-2024.html">2023/2024</a></li>
-        <li><a href="archive/2022-2023.html">2022/2023</a></li>
-        <li><a href="archive/2021-2022.html">2021/2022</a></li>
-        <li><a href="archive/2020-2021.html">2020/2021</a></li>
-        <li><a href="archive/2019-2020.html">2019/2020</a></li>
-        <li><a href="archive/2018-2019.html">2018/2019</a></li>
-        <li><a href="archive/2017-2018.html">2017/2018</a></li>
-        <li><a href="archive/2016-2017.html">2016/2017</a></li>
-        <li><a href="archive/2015-2016.html">2015/2016</a></li>
-        <li><a href="archive/2014-2015.html">2014/2015</a></li>
-        <li><a href="archive/2013-2014.html">2013/2014</a></li>
-        <li><a href="archive/2012-2013.html">2012/2013</a></li>
-        <li><a href="archive/2011-2012.html">2011/2012</a></li>
-        <li><a href="archive/2010-2011.html">2010/2011</a></li>
-        <li><a href="archive/2009-2010.html">2009/2010</a></li>
-        <li><a href="archive/2008-2009.html">2008/2009</a></li>
-        <li><a href="archive/2007-2008.html">2007/2008</a></li>
-        <li><a href="archive/2006-2007.html">2006/2007</a></li>
-        <li><a href="archive/2005-2006.html">2005/2006</a></li>
-        <li><a href="archive/2004-2005.html">2004/2005</a></li>
-      </ul>
+      <div class="page-content">
+        <section class="card">
+          <h2 id="past-seasons-heading">Minulé ročníky</h2>
+
+          <ul class="season-list" aria-label="Seznam minulých ročníků">
+            <li><a href="archive/2024-2025.html">2024 / 2025</a></li>
+            <li><a href="archive/2023-2024.html">2023 / 2024</a></li>
+            <li><a href="archive/2022-2023.html">2022 / 2023</a></li>
+            <li><a href="archive/2021-2022.html">2021 / 2022</a></li>
+            <li><a href="archive/2020-2021.html">2020 / 2021</a></li>
+            <li><a href="archive/2019-2020.html">2019 / 2020</a></li>
+            <li><a href="archive/2018-2019.html">2018 / 2019</a></li>
+            <li><a href="archive/2017-2018.html">2017 / 2018</a></li>
+            <li><a href="archive/2016-2017.html">2016 / 2017</a></li>
+            <li><a href="archive/2015-2016.html">2015 / 2016</a></li>
+            <li><a href="archive/2014-2015.html">2014 / 2015</a></li>
+            <li><a href="archive/2013-2014.html">2013 / 2014</a></li>
+            <li><a href="archive/2012-2013.html">2012 / 2013</a></li>
+            <li><a href="archive/2011-2012.html">2011 / 2012</a></li>
+            <li><a href="archive/2010-2011.html">2010 / 2011</a></li>
+            <li><a href="archive/2009-2010.html">2009 / 2010</a></li>
+            <li><a href="archive/2008-2009.html">2008 / 2009</a></li>
+            <li><a href="archive/2007-2008.html">2007 / 2008</a></li>
+            <li><a href="archive/2006-2007.html">2006 / 2007</a></li>
+            <li><a href="archive/2005-2006.html">2005 / 2006</a></li>
+            <li><a href="archive/2004-2005.html">2004 / 2005</a></li>
+          </ul>
+
+        </section>
+      </div>
+
     </section>
   </main>
 
-  <footer class="site-footer"><div class="container">© ŠK Dolní Bojanovice & Ch13</div></footer>
+  <footer class="site-footer">
+    <div class="container">© ŠK Dolní Bojanovice &amp; Ch13</div>
+  </footer>
 </body>
 </html>
