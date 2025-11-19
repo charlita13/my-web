@@ -1,0 +1,611 @@
+/* Reset & base */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #222;
+  background: #f7f7f8;
+  line-height: 1.45;
+}
+a { color: #0b66c3; text-decoration: none; }
+.container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+
+/* HEADER */
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid #e6e6e9;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 24px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.brand img {
+  height: 56px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 4px;
+  display: block;
+}
+.brand h1 {
+  font-size: 1.6rem;
+  margin: 0;
+  line-height: 1.1;
+}
+.nav {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.nav a {
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-weight: 650;
+}
+.nav a:hover { background: #f0f6ff; }
+
+@media (max-width:880px){
+  .nav { display:none; }
+  .brand h1 { font-size:1rem; }
+}
+
+/* HERO SIDE */
+.hero-side { padding: 28px 0; }
+.hero-side-inner {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.hero-logo img {
+  width: 220px;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.hero-text h1 {
+  font-size: 2rem;
+  margin: 0;
+  line-height: 1.05;
+}
+.hero-text .lead {
+  color: #444;
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+@media (max-width:880px){
+  .hero-side-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+  .hero-logo img { width:160px; }
+  .hero-text h1 { font-size:1.6rem; }
+}
+
+/* PAGE-WITH-LOGO (vlevo logo, vpravo obsah) */
+.page-with-logo {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 32px;
+  align-items: start;
+  margin-top: 20px;
+}
+
+.page-logo img {
+  width: 100%;
+  max-width: 260px;
+  display: block;
+  border-radius: 10px;
+}
+
+.page-content h1 {
+  margin-top: 0;
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+}
+
+.page-content p {
+  text-align: justify;
+  margin-bottom: 14px;
+}
+
+@media (max-width:780px){
+  .page-with-logo { grid-template-columns: 1fr; }
+  .page-logo { text-align:center; }
+  .page-logo img {
+    max-width:200px;
+    margin:0 auto;
+  }
+}
+
+/* CARD */
+.card {
+  background:#fff;
+  padding:16px;
+  border-radius:10px;
+  border:1px solid #eef0f3;
+}
+.card h2 {
+  margin-bottom:14px;
+}
+
+/* TABLE */
+.table { width:100%; border-collapse:collapse; }
+.table th, .table td {
+  padding:10px 8px;
+  text-align:left;
+  border-bottom:1px solid #f0f0f2;
+}
+.table th { font-weight:700; background:#fafbfc; }
+
+/* Links: popis vlevo, odkazy v pravém sloupci ale zarovnané vlevo (spodní osa) */
+.link-row {
+  display: grid;
+  grid-template-columns: 1fr 360px; /* levý popis 1fr, pravý sloupec pevná šířka */
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f2;
+}
+.link-row:last-child { border-bottom: none; }
+
+.link-row span {
+  font-weight: 600;
+  color: #222;
+  grid-column: 1;
+  justify-self: start;
+  padding-right: 8px;
+}
+
+.link-row a {
+  grid-column: 2;
+  justify-self: start;   /* odkaz bude vlevo v pravém sloupci */
+  text-align: left;
+  font-weight: 600;
+  color: #0b66c3;
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; /* nebo remove, pokud chceš lámat URL */
+}
+
+/* Mobil: stack label + URL, odkazy zase na nový řádek */
+@media (max-width:780px) {
+  .link-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .link-row a {
+    justify-self: start;
+    white-space: normal;
+    text-overflow: unset;
+  }
+}
+
+/* Footer center */
+.site-footer .container {
+  text-align: center;
+}
+
+/* Map preview */
+.map-preview {
+  margin-top: 22px;
+  display: flex;
+  justify-content: center; /* vycentruje mapu */
+}
+
+.map-preview img {
+  width: 100%;
+  max-width: 650px;   /* větší prostor pro mapu */
+  border-radius: 12px;
+  display: block;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+  transition: transform 0.15s ease;
+}
+
+.map-preview img:hover {
+  transform: scale(1.02);
+}
+
+/* Photo block for Štěpánský turnaj */
+.stepan-photo {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.stepan-photo img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Winners list (řádky vítězů) - varianta B (flex s pevnou šířkou levého sloupce) */
+.winners-list {
+  margin-top: 16px;
+}
+
+.winner-row {
+  display: grid;
+  grid-template-columns: 600px 1fr;  /* zvýšeno z 140px → 200px */
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f2;
+}
+
+.winner-row span:first-child {
+  font-weight: 600;
+  text-align: left;
+}
+
+.winner-row span:last-child {
+  font-weight: 600;
+  text-align: left;
+  padding-left: 10px; /* odsazení od roku */
+}
+
+/* drobné utility */
+.small { font-size: 0.9rem; }
+.muted { color: #777; }
+.post-date {
+  font-size: 0.85rem;
+  color: #777;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+/* Responsive tweaks */
+@media (max-width: 520px) {
+  .winner-row span:first-child {
+    width: 120px; /* menší na mobilu */
+  }
+  .page-content p { font-size: 0.95rem; }
+}
+
+.winners-list-title {
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.stepan-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* dvě stejné poloviny */
+  gap: 32px;
+  margin-top: 20px;
+  align-items: start;
+}
+
+/* Fotka */
+.stepan-photo img {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+}
+
+/* Titulek u vítězů */
+.winners-list-title {
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+/* Seznam vítězů */
+.winner-row {
+  display: flex;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f2;
+}
+
+.winner-row:last-child {
+  border-bottom: none;
+}
+
+.winner-row span:first-child {
+  width: 160px;
+  font-weight: 600;
+}
+
+.winner-row span:last-child {
+  margin-left: auto;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Mobilní režim */
+@media (max-width: 780px) {
+  .stepan-layout {
+    grid-template-columns: 1fr; /* pod sebe */
+  }
+}
+
+.card ul {
+  list-style: none;       /* odstraní tečky */
+  padding-left: 0;        /* srovná odsazení */
+  margin-left: 0;
+}
+
+.card li {
+  margin-bottom: 6px;     /* volitelné – mezera mezi řádky */
+}
+
+.season-photo {
+  text-align: center;
+  margin: 25px 0;
+}
+
+.season-photo img {
+  max-width: 100%;
+  width: 650px;        /* nebo jiná velikost */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.link-row {
+  display: flex;
+  justify-content: space-between; /* popisek vlevo – odkaz úplně vpravo */
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f2;
+}
+
+.link-row span {
+  font-weight: 600;
+  color: #222;
+}
+
+.link-row a {
+  font-weight: 600;
+  color: #0b66c3;
+  white-space: nowrap; /* aby se nelámal */
+}
+
+.season-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.season-list a {
+  display: block;      /* DŮLEŽITÉ → každý odkaz na svůj řádek */
+  padding: 4px 0;
+  color: #0b66c3;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.season-list a:hover {
+  text-decoration: underline;
+}
+
+.season-sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* vycentruje vertikálně */
+  min-height: 100%;          /* potřebuje výšku rodiče */
+}
+
+.season-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;           /* ponecháme text vlevo = vypadá líp */
+}
+
+.season-list a {
+  display: block;
+  padding: 4px 0;
+  font-weight: 600;
+  color: #0b66c3;
+}
+
+/* Reset & base */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #222;
+  background: #f7f7f8;
+  line-height: 1.45;
+}
+a { color: #0b66c3; text-decoration: none; }
+.container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+
+/* HEADER */
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid #e6e6e9;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 24px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.brand img {
+  height: 56px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 4px;
+  display: block;
+}
+.brand h1 { font-size: 1.6rem; margin: 0; line-height: 1.1; }
+.brand h2 { margin: 0; font-size: 1rem; font-weight: 600; color: #222; line-height: 1.05; }
+
+.nav { display: flex; gap: 12px; align-items: center; }
+.nav a { padding: 8px 10px; border-radius: 6px; font-weight: 650; }
+.nav a:hover { background: #f0f6ff; }
+
+@media (max-width:880px){
+  .nav { display:none; }
+  .brand h1 { font-size:1rem; }
+}
+
+/* PAGE-WITH-LOGO (levý sloupec = sezóny, pravý obsah) */
+.page-with-logo {
+  display: grid;
+  grid-template-columns: 220px minmax(600px, 1fr); /* levý sloupec + pružný obsah */
+  gap: 32px;
+  align-items: stretch;
+  margin-top: 20px;
+}
+
+/* LEVÝ SLOUPEC - seznam sezón */
+.season-sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* vertikální centrování seznamu */
+  align-items: flex-start;
+  padding-left: 12px;
+  min-height: 0;
+}
+
+.season-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  max-width: 160px;    /* jak daleko směrem doprava seznam sahá */
+}
+
+.season-list a {
+  display: block;
+  padding: 4px 0;
+  color: #0b66c3;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color .12s, background .12s;
+}
+.season-list a:hover { text-decoration: underline; }
+.season-list a.active { color:#083a72; background: rgba(11,102,195,0.06); padding-left:6px; border-radius:4px; }
+
+/* PRAVÝ OBSAH (karta) */
+.card {
+  background:#fff;
+  padding:16px;
+  border-radius:10px;
+  border:1px solid #eef0f3;
+}
+.card h2 { margin-bottom:14px; }
+
+/* link-row: popis vlevo, odkaz vpravo */
+.link-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f2;
+}
+.link-row span { font-weight: 600; color:#222; }
+.link-row a { font-weight: 600; color:#0b66c3; white-space: nowrap; }
+
+/* Season photo */
+.season-photo { text-align: center; margin: 25px 0; }
+.season-photo img {
+  max-width: 100%;
+  width: 650px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  display: block;
+  margin: 0 auto;
+} 
+
+/* Footer center */
+.site-footer .container { text-align: center; padding: 18px 0; color:#666; }
+
+/* Small utilities */
+.small { font-size: 0.9rem; }
+.muted { color: #777; }
+
+/* RESPONSIVE: na mobil přeuspořádání (seznam sezón pod obsah) */
+@media (max-width: 780px) {
+  .page-with-logo { grid-template-columns: 1fr; }
+  .season-sidebar { order: -1; padding-left: 0; align-items: center; }
+  .season-list { max-width: 100%; align-items: center; }
+  .season-list a { white-space: normal; text-align: center; }
+  .season-photo img { width: 100%; }
+}
+
+/* --- články / úryvky --- */
+.latest-post .post-date,
+.post-date {
+  color: #777;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.latest-post .post-title,
+article h1 {
+  margin: 6px 0 8px;
+  font-size: 1.25rem;
+  color: #111;
+}
+
+/* Ořez úryvku na 2 řádky (pokud chceš) */
+.post-excerpt {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #444;
+}
+
+/* Tlačítka */
+.btn {
+  background: #0b66c3;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 700;
+  display:inline-block;
+}
+.btn-ghost {
+  background: transparent;
+  color: #0b66c3;
+  border: 1px solid #0b66c3;
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+/* Vnitřní odstavce článku */
+.post-body p { margin-bottom: 14px; color:#333; line-height:1.6; }
+
+/* Responsivně: menší nadpisy a obrázky */
+@media (max-width: 780px) {
+  .latest-post .post-title { font-size: 1.1rem; }
+  .post-excerpt { -webkit-line-clamp: 4; } /* více řádků na malém zařízení */
+}
+
+.brand {
+  text-decoration: none;
+  color: inherit;
+}
+.brand h1, .brand h2 {
+  color: inherit;
+}
