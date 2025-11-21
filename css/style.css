@@ -1,67 +1,100 @@
-/* Reset & base */
+/* =========================
+   Reset & Base
+   ========================= */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body {
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   color: #222;
   background: #f7f7f8;
   line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 a { color: #0b66c3; text-decoration: none; }
 .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
 
-/* HEADER */
+/* Utilities */
+.small { font-size: 0.9rem; }
+.muted { color: #777; }
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px; overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px); white-space: nowrap;
+  border: 0; padding: 0; margin: -1px;
+}
+
+/* =========================
+   Header / Brand / Nav
+   ========================= */
 .site-header {
   background: #fff;
   border-bottom: 1px solid #e6e6e9;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 9999; /* keep header above content */
 }
+
 .header-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+  gap: 12px;
   padding: 18px 24px;
 }
+
+/* Brand */
 .brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   text-decoration: none;
   color: inherit;
+  flex: 0 0 auto; /* take only needed space */
 }
-.brand img {
-  height: 56px;
+.brand img,
+.brand-logo {
+  display: block;
   width: auto;
+  height: 56px;        /* desktop default */
+  max-width: 180px;
   object-fit: contain;
   border-radius: 4px;
-  display: block;
+  flex-shrink: 0;
 }
 .brand h1 {
-  font-size: 1.6rem;
+  font-size: 1.05rem;
   margin: 0;
   line-height: 1.1;
   color: inherit;
 }
 .brand h2 {
   margin: 0;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #222;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #666;
   line-height: 1.05;
 }
 
-.nav { display: flex; gap: 12px; align-items: center; }
-.nav a { padding: 8px 10px; border-radius: 6px; font-weight: 650; }
-.nav a:hover { background: #f0f6ff; }
-
-@media (max-width:880px){
-  .nav { display: none; }
-  .brand h1 { font-size: 1rem; }
+/* Navigation */
+.nav, nav.nav {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-left: auto; /* push navigation to the right */
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
+.nav a, nav.nav a {
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-weight: 650;
+  display: inline-block;
+  white-space: nowrap;
+}
+.nav a:hover, nav.nav a:hover { background: #f0f6ff; }
 
-/* HERO SIDE */
+/* =========================
+   Hero / Page layout / Logo block
+   ========================= */
 .hero-side { padding: 28px 0; }
 .hero-side-inner {
   display: flex;
@@ -85,17 +118,7 @@ a { color: #0b66c3; text-decoration: none; }
   font-size: 1rem;
 }
 
-@media (max-width:880px){
-  .hero-side-inner {
-    flex-direction: column;
-    text-align: center;
-    gap: 16px;
-  }
-  .hero-logo img { width: 160px; }
-  .hero-text h1 { font-size: 1.6rem; }
-}
-
-/* PAGE-WITH-LOGO (left: seasons/logo, right: content) */
+/* Page with left logo / right content */
 .page-with-logo {
   display: grid;
   grid-template-columns: 220px minmax(600px, 1fr);
@@ -104,9 +127,10 @@ a { color: #0b66c3; text-decoration: none; }
   margin-top: 20px;
 }
 
-/* LEFT COLUMN - season list / logo */
+/* Left column images (logo, season photos) */
 .page-logo img,
-.season-photo img {
+.season-photo img,
+.hero-logo img {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
@@ -122,10 +146,8 @@ a { color: #0b66c3; text-decoration: none; }
   padding-left: 12px;
   min-height: 0;
 }
-.season-list a {
-  padding: 0;
-  line-height: 1.0;
-}
+
+/* Season list links */
 .season-list a {
   display: block;
   padding: 4px 0;
@@ -142,18 +164,12 @@ a { color: #0b66c3; text-decoration: none; }
   border-radius: 4px;
 }
 
-/* PAGE CONTENT */
-.page-content h1 {
-  margin-top: 0;
-  font-size: 1.6rem;
-  margin-bottom: 12px;
-}
-.page-content p {
-  text-align: justify;
-  margin-bottom: 14px;
-}
+/* =========================
+   Page content & cards
+   ========================= */
+.page-content h1 { margin-top: 0; font-size: 1.6rem; margin-bottom: 12px; }
+.page-content p { text-align: justify; margin-bottom: 14px; color: #333; line-height: 1.6; }
 
-/* CARD */
 .card {
   background: #fff;
   padding: 16px;
@@ -164,7 +180,7 @@ a { color: #0b66c3; text-decoration: none; }
 .card ul { list-style: none; padding-left: 0; margin-left: 0; }
 .card li { margin-bottom: 6px; }
 
-/* TABLE */
+/* Table */
 .table { width: 100%; border-collapse: collapse; }
 .table th, .table td {
   padding: 10px 8px;
@@ -173,7 +189,17 @@ a { color: #0b66c3; text-decoration: none; }
 }
 .table th { font-weight: 700; background: #fafbfc; }
 
-/* LINK ROW - description left, link right (desktop); stacked on mobile */
+/* Table section title */
+.table-section-title {
+  font-weight: 700;
+  text-align: left;
+  margin-left: 60px;
+  margin-bottom: 6px;
+  font-size: 1.05rem;
+  color: #222;
+}
+
+/* Link row (two variants: flex and grid) */
 .link-row {
   display: flex;
   justify-content: space-between;
@@ -193,7 +219,7 @@ a { color: #0b66c3; text-decoration: none; }
   text-overflow: ellipsis;
 }
 
-/* Alternate grid variant (used where long descriptions + fixed-width link needed) */
+/* Alternate grid layout */
 .link-row.grid {
   display: grid;
   grid-template-columns: 1fr 360px;
@@ -202,18 +228,9 @@ a { color: #0b66c3; text-decoration: none; }
 .link-row.grid span { grid-column: 1; justify-self: start; padding-right: 8px; }
 .link-row.grid a { grid-column: 2; justify-self: start; text-align: left; white-space: nowrap; }
 
-/* Mobile: stack label + URL */
-@media (max-width:780px) {
-  .link-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
-  }
-  .link-row a { white-space: normal; text-overflow: unset; }
-  .link-row.grid { grid-template-columns: 1fr; }
-}
-
-/* Map preview */
+/* =========================
+   Map preview / Photos / Stepan layout
+   ========================= */
 .map-preview {
   margin-top: 22px;
   display: flex;
@@ -229,7 +246,6 @@ a { color: #0b66c3; text-decoration: none; }
 }
 .map-preview img:hover { transform: scale(1.02); }
 
-/* STEPAN / PHOTO BLOCK */
 .stepan-photo,
 .season-photo {
   text-align: center;
@@ -245,7 +261,7 @@ a { color: #0b66c3; text-decoration: none; }
   margin: 0 auto;
 }
 
-/* STEPAN LAYOUT (two-column section) */
+/* two-column stepan layout */
 .stepan-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -253,15 +269,11 @@ a { color: #0b66c3; text-decoration: none; }
   margin-top: 20px;
   align-items: start;
 }
-@media (max-width:780px) {
-  .stepan-layout { grid-template-columns: 1fr; }
-}
 
-/* WINNERS LIST */
+/* Winners list */
 .winners-list { margin-top: 16px; }
 .winners-list-title { text-align: center; margin-bottom: 14px; }
 
-/* winner-row - compact, responsive layout */
 .winner-row {
   display: flex;
   padding: 8px 0;
@@ -279,13 +291,9 @@ a { color: #0b66c3; text-decoration: none; }
   white-space: nowrap;
 }
 
-/* Responsive tweak for very small screens */
-@media (max-width:520px) {
-  .winner-row span:first-child { width: 120px; }
-  .page-content p { font-size: 0.95rem; }
-}
-
-/* LATEST POSTS / ARTICLES */
+/* =========================
+   Latest posts / articles
+   ========================= */
 .latest-post .post-date,
 .post-date {
   color: #777;
@@ -299,6 +307,7 @@ article h1 {
   font-size: 1.25rem;
   color: #111;
 }
+
 /* excerpt truncated to 2 lines (expand on small devices) */
 .post-excerpt {
   display: -webkit-box;
@@ -307,10 +316,6 @@ article h1 {
   overflow: hidden;
   text-overflow: ellipsis;
   color: #444;
-}
-@media (max-width:780px) {
-  .latest-post .post-title { font-size: 1.1rem; }
-  .post-excerpt { -webkit-line-clamp: 4; }
 }
 
 /* Buttons */
@@ -338,120 +343,73 @@ article h1 {
 /* Footer */
 .site-footer .container { text-align: center; padding: 18px 0; color: #666; }
 
-/* Utilities */
-.small { font-size: 0.9rem; }
-.muted { color: #777; }
-.post-date { font-size: 0.85rem; color: #777; margin-bottom: 4px; font-weight: 500; }
-.visually-hidden {
-  position: absolute !important;
-  height: 1px; width: 1px;
-  overflow: hidden;
-  clip: rect(1px, 1px, 1px, 1px);
-  white-space: nowrap;
-  border: 0; padding: 0; margin: -1px;
+/* =========================
+   Logo & header responsiveness (consolidated)
+   ========================= */
+/* desktop already defined above; now responsive tweaks below */
+
+/* Breakpoint: <= 880px */
+@media (max-width:880px){
+  .nav { display: none; } /* optional: hide nav in small desktop/tablet */
+  .brand h1 { font-size: 1rem; }
+  .hero-logo img { width: 160px; }
+  .hero-text h1 { font-size: 1.6rem; }
 }
 
-/* Table section title */
-.table-section-title {
-  font-weight: 700;
-  text-align: left;
-  margin-left: 60px;
-  margin-bottom: 6px;
-  font-size: 1.05rem;
-  color: #222;
-}
+/* Breakpoint: <= 780px */
+@media (max-width:780px) {
+  .link-row { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .link-row a { white-space: normal; text-overflow: unset; }
+  .link-row.grid { grid-template-columns: 1fr; }
 
-/* Responsive: page-with-logo stacks on smaller screens */
-@media (max-width: 780px) {
   .page-with-logo { grid-template-columns: 1fr; }
   .season-sidebar { order: -1; padding-left: 0; align-items: center; }
   .season-list { max-width: 100%; align-items: center; }
   .season-list a { white-space: normal; text-align: center; }
   .season-photo img { width: 100%; }
+
+  .latest-post .post-title { font-size: 1.1rem; }
+  .post-excerpt { -webkit-line-clamp: 4; }
+
+  .stepan-layout { grid-template-columns: 1fr; }
 }
 
-/* 1) Zajistí, že header je nad ostatním */
-.site-header {
-  position: relative;
-  z-index: 9999;
-}
-
-/* 2) Základní pravidla pro navigaci - vždy viditelná a responsivní */
-nav.nav {
-  display: flex !important;        /* pokud bylo někde display:none */
-  flex-wrap: nowrap;
-  gap: 12px;
-  align-items: center;
-  overflow-x: auto;                /* umožní posouvání menu na malých obrazovkách */
-  -webkit-overflow-scrolling: touch;
-}
-
-/* Linky se nezalamují a jsou čitelné */
-nav.nav a {
-  white-space: nowrap;
-  padding: 8px 10px;
-  display: inline-block;
-}
-
-/* 3) Mobilní drobné úpravy (zmenší text a logo) */
-@media (max-width: 520px) {
-  .brand img { width: 40px; height: 40px; }
-  nav.nav { font-size: 0.95rem; }
-}
-
-
-/* Header layout: brand vlevo, nav vpravo, nav zabírá volný prostor */
-.header-inner {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  color: inherit;
-  flex: 0 0 auto; /* brand si vezme jen tolik místa, kolik potřebuje */
-}
-
-/* Logo: škálovatelné, pevné max výšky, zachovává poměr stran */
-.brand-logo {
-  display: block;
-  width: auto;
-  height: 56px;         /* desktop: max výška loga */
-  max-width: 160px;     /* nikdy příliš široké */
-  object-fit: contain;
-  flex-shrink: 0;       /* nezmení se pod tlakem */
-}
-
-/* Text vedle loga */
-.brand-text h1 { margin:0; font-size:1.05rem; }
-.brand-text h2 { margin:0; font-size:0.85rem; font-weight:400; color:#666; }
-
-/* Navigace zabírá zbylý prostor a může horizontálně scrollovat */
-nav.nav {
-  display: flex;
-  gap: 12px;
-  margin-left: auto;     /* posune nav doprava */
-  align-items: center;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-/* --- Mobilní úpravy --- */
-@media (max-width: 720px) {
-  .brand-logo { height: 44px; max-width: 120px; }
+/* Breakpoint: <= 720px */
+@media (max-width:720px) {
+  .brand img.brand-logo,
+  .brand-logo { height: 44px; max-width: 140px; }
   .brand-text h1 { font-size: 0.95rem; }
   .brand-text h2 { font-size: 0.8rem; }
+
+  /* shrink content logo */
+  .page-logo img,
+  .page-logo .resp,
+  .page-logo img.resp { max-width: 160px; margin-top: 6px; margin-bottom: 10px; }
+
+  /* navigation safeguards */
+  nav.nav { margin-left: 8px; overflow-x: auto; }
 }
 
-/* Na velmi malých displejích schovej textovou část a zmenši ikonku */
-@media (max-width: 520px) {
+/* Breakpoint: <= 520px (mobile) */
+@media (max-width:520px) {
+  .brand img { width: 40px; height: 40px; }
   .brand-logo { height: 36px; max-width: 90px; }
-  .brand-text { display: none; }    /* zobrazí se pouze ikona */
+  .brand-text { display: none; } /* hide text on small phones */
   nav.nav { font-size: 0.95rem; }
+
+  .winner-row span:first-child { width: 120px; }
+  .page-content p { font-size: 0.95rem; }
+
+  /* content logo smaller */
+  .page-logo img,
+  .page-logo .resp,
+  .page-logo img.resp { max-width: 120px; }
 }
 
-/* Volitelně: pokud by nav překrývalo header, zvyšte z-index */
-.site-header { position: relative; z-index: 9999; }
+/* Breakpoint: <= 420px (very small) */
+@media (max-width:420px) {
+  .brand img.brand-logo,
+  .brand-logo { height: 36px; max-width: 110px; }
+  .page-logo img,
+  .page-logo .resp { max-width: 120px; }
+}
