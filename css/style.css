@@ -398,3 +398,60 @@ nav.nav a {
   .brand img { width: 40px; height: 40px; }
   nav.nav { font-size: 0.95rem; }
 }
+
+
+/* Header layout: brand vlevo, nav vpravo, nav zabírá volný prostor */
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+  flex: 0 0 auto; /* brand si vezme jen tolik místa, kolik potřebuje */
+}
+
+/* Logo: škálovatelné, pevné max výšky, zachovává poměr stran */
+.brand-logo {
+  display: block;
+  width: auto;
+  height: 56px;         /* desktop: max výška loga */
+  max-width: 160px;     /* nikdy příliš široké */
+  object-fit: contain;
+  flex-shrink: 0;       /* nezmení se pod tlakem */
+}
+
+/* Text vedle loga */
+.brand-text h1 { margin:0; font-size:1.05rem; }
+.brand-text h2 { margin:0; font-size:0.85rem; font-weight:400; color:#666; }
+
+/* Navigace zabírá zbylý prostor a může horizontálně scrollovat */
+nav.nav {
+  display: flex;
+  gap: 12px;
+  margin-left: auto;     /* posune nav doprava */
+  align-items: center;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* --- Mobilní úpravy --- */
+@media (max-width: 720px) {
+  .brand-logo { height: 44px; max-width: 120px; }
+  .brand-text h1 { font-size: 0.95rem; }
+  .brand-text h2 { font-size: 0.8rem; }
+}
+
+/* Na velmi malých displejích schovej textovou část a zmenši ikonku */
+@media (max-width: 520px) {
+  .brand-logo { height: 36px; max-width: 90px; }
+  .brand-text { display: none; }    /* zobrazí se pouze ikona */
+  nav.nav { font-size: 0.95rem; }
+}
+
+/* Volitelně: pokud by nav překrývalo header, zvyšte z-index */
+.site-header { position: relative; z-index: 9999; }
