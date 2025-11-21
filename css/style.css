@@ -369,3 +369,32 @@ article h1 {
   .season-list a { white-space: normal; text-align: center; }
   .season-photo img { width: 100%; }
 }
+
+/* 1) Zajistí, že header je nad ostatním */
+.site-header {
+  position: relative;
+  z-index: 9999;
+}
+
+/* 2) Základní pravidla pro navigaci - vždy viditelná a responsivní */
+nav.nav {
+  display: flex !important;        /* pokud bylo někde display:none */
+  flex-wrap: nowrap;
+  gap: 12px;
+  align-items: center;
+  overflow-x: auto;                /* umožní posouvání menu na malých obrazovkách */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Linky se nezalamují a jsou čitelné */
+nav.nav a {
+  white-space: nowrap;
+  padding: 8px 10px;
+  display: inline-block;
+}
+
+/* 3) Mobilní drobné úpravy (zmenší text a logo) */
+@media (max-width: 520px) {
+  .brand img { width: 40px; height: 40px; }
+  nav.nav { font-size: 0.95rem; }
+}
